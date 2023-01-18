@@ -40,11 +40,13 @@ void navigator(std::string str) {
 			std::cout << "Start new game" << std::endl;
 		} 
 		if (str == MENU_COMMANDS[1]||
-			str == MENU_COMMANDS[2] || str == MENU_COMMANDS[3]) {
+			str == MENU_COMMANDS[2] ||
+			str == MENU_COMMANDS[3]) {
 			std::cout << "Change count of letters" << std::endl;
 		}
 		if (str == MENU_COMMANDS[4] ||
-			str == MENU_COMMANDS[5] || str == MENU_COMMANDS[6]) {
+			str == MENU_COMMANDS[5] ||
+			str == MENU_COMMANDS[6]) {
 			std::cout << "Change count of rounds" << std::endl;
 		}
 		if (str == MENU_COMMANDS[7]) {
