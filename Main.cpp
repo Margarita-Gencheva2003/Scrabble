@@ -14,9 +14,6 @@ void printMainMenu() {
 	"4. Exit" << std::endl;
 
 }
-void userToEnterMenuInput(std::string str) {
-	std::getline(std::cin, str);
-}
 bool isStrCommandNotValid(std::string str) {
 	int controlCounter = 0;
 	for (int i = 0; i < COUNT_OF_MENU_POS_COMDS; i++) {
@@ -62,6 +59,6 @@ void navigator(std::string str) {
 int main() {
 	printMainMenu();
 	std::string myCommandAccessMenu = "";
-	userToEnterMenuInput(myCommandAccessMenu);
+	std::getline(std::cin, myCommandAccessMenu);
 	navigator(myCommandAccessMenu);
 }
