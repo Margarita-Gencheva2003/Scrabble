@@ -21,10 +21,12 @@ bool isStrCommandNotValid(std::string str) {
 			++controlCounter;
 		}
 	}
-	if (controlCounter == 0) return true;
+	if (controlCounter == 0) {
+		return true;
+	}
 	return false;
 }
-void navigator(std::string str) {
+void navigator(std::string str, int countLetters, int countRounds) {
 	std::string strIfFalse = "";
 	int controlMaxWrongInput = 0;
 	if (isStrCommandNotValid(str)) {
@@ -32,22 +34,26 @@ void navigator(std::string str) {
 			" to access the menu" << std::endl;
 		std::getline(std::cin, strIfFalse);
 		++controlMaxWrongInput;
-		if (controlMaxWrongInput > 10)return;
-		navigator(strIfFalse);
+		if (controlMaxWrongInput > 10) {
+			return;
+		}
+		navigator(strIfFalse, countLetters, countRounds);
 	}
 	else {
 		if (str == MENU_COMMANDS[0]) {
-			std::cout << "Start new game" << std::endl;
+			startNewGame(countLetters, countRounds);
 		} 
 		if (str == MENU_COMMANDS[1]||
 			str == MENU_COMMANDS[2] ||
 			str == MENU_COMMANDS[3]) {
-			std::cout << "Change count of letters" << std::endl;
+			int changeLetters = 0;
+			countLetters = changeCount(countLetters, changeLetters);
 		}
 		if (str == MENU_COMMANDS[4] ||
 			str == MENU_COMMANDS[5] ||
 			str == MENU_COMMANDS[6]) {
-			std::cout << "Change count of rounds" << std::endl;
+			int changeRounds = 0;
+			countLetters = changeCount(countRounds, changeRounds);
 		}
 		if (str == MENU_COMMANDS[7]) {
 			std::cout << "Include new word in dictionary"
@@ -56,11 +62,14 @@ void navigator(std::string str) {
 		if (str == MENU_COMMANDS[8]) {
 			std::cout << "Exit" << std::endl;
 		}
+		printMainMenu();
 	}
 }
 int main() {
+	int countOfLetters = 10;
+	int countOfRounds = 10;
 	printMainMenu();
 	std::string myCommandAccessMenu = "";
 	std::getline(std::cin, myCommandAccessMenu);
-	navigator(myCommandAccessMenu);
+	navigator(myCommandAccessMenu, countOfLetters, countOfRounds);
 }
