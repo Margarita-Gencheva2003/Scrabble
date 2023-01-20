@@ -31,7 +31,7 @@ void navigator(int numAccessMenu, int countLetters, int countRounds) {
 			settings(countLetters, countRounds);
 			break;
 		case 3:
-			inputNewWord();
+			inputNewWord(countLetters, countRounds);
 			break;
 		case 4:
 			exit();

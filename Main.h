@@ -4,5 +4,5 @@ void navigator(int, int, int);
 void settings(int, int);
 void startNewGame(int, int);
 int changeCount(int, int);
-void inputNewWord();
+void inputNewWord(const int, const int);
 void exit();
