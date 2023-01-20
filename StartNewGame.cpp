@@ -1,3 +1,18 @@
+/**
+*
+* Solution to course project # 08
+* Introduction to programming course
+* Faculty of Mathematics and Informatics of Sofia University
+* Winter semester 2022/2023
+*
+* @author Margarita Gencheva
+* @idnumber 6MI0600148
+* @compiler GCC
+*
+* <file with functions with the main logic of the game>
+*
+*/
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -165,7 +180,7 @@ void inputNewWord(const int countLetters,const int countRounds) {
 	backToTheMenu(countLetters, countRounds);
 }
 void exit() {
-	
+	return;
 }
 int changeCount(int count, int change) {
 	if (count >= 0 && (count + change) >= 0) {
