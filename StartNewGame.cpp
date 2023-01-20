@@ -7,7 +7,7 @@
 *
 * @author Margarita Gencheva
 * @idnumber 6MI0600148
-* @compiler GCC
+* @compiler Visual Studio
 *
 * <file with functions with the main logic of the game>
 *

@@ -7,7 +7,7 @@
 *
 * @author Margarita Gencheva
 * @idnumber 6MI0600148
-* @compiler GCC
+* @compiler Visual Studio
 *
 * <file with main() and navigator for the menu>
 *

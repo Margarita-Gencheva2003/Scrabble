@@ -7,7 +7,7 @@
 *
 * @author Margarita Gencheva
 * @idnumber 6MI0600148
-* @compiler GCC
+* @compiler Visual Studio
 *
 * <header file with declarations of the main functions>
 *
