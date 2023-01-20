@@ -28,7 +28,7 @@ void navigator(int numAccessMenu, int countLetters, int countRounds) {
 			startNewGame(countLetters, countRounds);
 			break;
 		case 2:
-			settings();
+			settings(countLetters, countRounds);
 			break;
 		case 3:
 			inputNewWord();

@@ -91,8 +91,43 @@ void startNewGame(int countOfLetters, int countOfRounds) {
 		" points total." <<
 		std::endl;
 }
-void settings() {
-
+void printMessageForChangedCount(int change, std::string str) {
+	std::cout << "Now on every round you will have: ";
+	std::cout << change
+		<< " "
+		<< str
+		<< "."
+		<< std::endl;
+}
+void settings(int countLetters, int countRounds) {
+	std::cout << "You have chosen Settings. Tap a OR b to continue";
+	std::cout << "\na is for changing count of letters"
+		<< "\nb is for changing count of rounds"
+		<< std::endl;
+	std::cin.ignore();
+	std::string option = "";
+	std::getline(std::cin, option);
+	int nextMenuCommand = 0;
+	if (option == "a") {
+		int change = 5;
+		int newCountOfLetters = changeCount(countLetters, change);
+		std::string strMessage = "letters";
+		printMessageForChangedCount(newCountOfLetters, strMessage);
+		printMainMenu();
+		std::cout << "Enter a num between 1 and 4: ";
+		std::cin >> nextMenuCommand;
+		navigator(nextMenuCommand, newCountOfLetters, countRounds);
+	}
+	if (option == "b") {
+		int change = 5;
+		int newCountOfRounds = changeCount(countRounds, change);
+		std::string strMessage = "rounds";
+		printMessageForChangedCount(newCountOfRounds, strMessage);
+		printMainMenu();
+		std::cout << "Enter a num between 1 and 4: ";
+		std::cin >> nextMenuCommand;
+		navigator(nextMenuCommand, countLetters, newCountOfRounds);
+	}
 }
 void inputNewWord() {
 
@@ -101,7 +136,6 @@ void exit() {
 	
 }
 int changeCount(int count, int change) {
-	std::cout << "Change count: " << std::endl;
 	if (count >= 0 && (count + change) >= 0) {
 		return count + change;
 	}
