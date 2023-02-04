@@ -90,7 +90,7 @@ bool isWordNotInDictionary(std::string word) {
 	std::ifstream readFile;
 	int controlIfWordIsInFile = 0;
 	std::string lineOfFile;
-	readFile.open("Dictionary");
+	readFile.open("Dictionary.txt");
 	if (!readFile) {
 		return false;
 	}
