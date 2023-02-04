@@ -21,24 +21,14 @@
 const int MAX_COUNT_OF_LETTERS = 25;
 const int MIN_COUNT_OF_LETTERS = 5;
 const int ALPHABETH_LEN = 26;
-int generateIntBetween(int rangeStart, int rangeEnd) {
-	int seed;
-	seed = time(0);//we use current time(since Jan 1, 1970)
-	//in seconds
-	//as seed to generate random number in a range
-	int modReducesCount = rangeEnd - rangeStart + 1;
-	int randomNumber =
-		(seed % modReducesCount)
-		+ rangeStart;
-	return randomNumber;
-}
+
 std::string generateLetters(int countLetters) {
 	std::string myLetters = "";
 	if (countLetters >= MIN_COUNT_OF_LETTERS &&
 		countLetters <= MAX_COUNT_OF_LETTERS) {
 		int modReducesCount = ALPHABETH_LEN;
 		for (int i = 0; i < countLetters; i++) {
-			long seed = (6 * i) + 5 + time(0);
+			long seed = (3 * i + i) + 5 * i + time(0);
 			// i used the help of chatGPT and the formula
 			int randomNum =
 			(seed % modReducesCount) + 0;
